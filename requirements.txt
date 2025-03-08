@@ -1,0 +1,19 @@
+black
+flake8
+ipython
+ipykernel
+isort
+jupyterlab
+loguru
+matplotlib
+mkdocs
+notebook
+numpy
+pandas
+pip
+plotly
+python-dotenv
+scikit-learn
+tqdm
+typer
+-e .
