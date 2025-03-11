@@ -12,6 +12,7 @@ numpy
 pandas
 pip
 plotly
+plotnine
 python-dotenv
 scikit-learn
 tqdm
