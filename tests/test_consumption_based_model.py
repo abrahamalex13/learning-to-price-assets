@@ -14,6 +14,7 @@ def test_transform_wellbeing_power_form():
 
     result = transform_wellbeing_power_form(consumption=100, strength_of_diminishing=0.75)
     # direct from power form model: ( 1 / (1-0.75) ) * 100**(1-0.75)
+    # a user/client would test this function via output value.
     expected = 4 * 3.1623
 
     assert np.isclose(expected, result, atol=0.001)
@@ -23,7 +24,9 @@ def test_transform_wellbeing_power_form_dwdc():
     consumption=10
     gamma=0.75
 
-    expected = consumption**(-1 * gamma)
+    # direct from power form model: consumption**(-1 * gamma)
+    expected = 0.17783
+    
     result = transform_wellbeing_power_form_dwdc(consumption, gamma)
 
     assert np.isclose(expected, result, atol=0.001)
