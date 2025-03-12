@@ -28,6 +28,10 @@ def infer_price(
     payoff_asset, 
     subjective_discount_factor
     ):
+    """
+    To avoid this function's arguments proliferation, 
+    request wellbeing_dwdc with pre-specified arguments (besides consumption). 
+    """
 
     price = (
         subjective_discount_factor * 
