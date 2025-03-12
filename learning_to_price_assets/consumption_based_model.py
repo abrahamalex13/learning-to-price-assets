@@ -51,7 +51,7 @@ def transform_lifetime_wellbeing(
     Wellbeing also known as 'utility', in economics jargon.
     Wooldridge associates the two terms in _Introductory Econometrics_ (Section 1-2).
 
-    Cochrane's _Asset Pricing_ presents a convenient functional form.
+    Cochrane's _Asset Pricing_ (Section 1.1) presents a convenient functional form.
     """
 
     wellbeing_today = wellbeing_func(consumption_today)
