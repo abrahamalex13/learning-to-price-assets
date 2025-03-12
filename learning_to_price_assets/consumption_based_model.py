@@ -17,11 +17,7 @@ def transform_wellbeing_power_form(consumption, strength_of_diminishing: float):
 def transform_wellbeing_power_form_dwdc(consumption, strength_of_diminishing: float):
     """ 'dwdc': derivative of wellbeing with respect to consumption. """
 
-    deriv = (
-        ( 1 / (1 - strength_of_diminishing) ) 
-        * (1 - strength_of_diminishing) 
-        * consumption**(-1 * strength_of_diminishing)
-        )
+    deriv = consumption**(-1 * strength_of_diminishing)
     
     return deriv
 
