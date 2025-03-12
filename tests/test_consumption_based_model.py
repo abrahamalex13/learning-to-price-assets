@@ -12,11 +12,9 @@ def test_transform_wellbeing_power_form():
     Benchmark against hard-coded power form model, per _Asset Pricing_ Section 1.1.
     """
 
-    consumption = 10
-    gamma = 0.75
-
-    expected = (1 / (1-gamma)) * consumption**(1-gamma)
-    result = transform_wellbeing_power_form(consumption, gamma)
+    result = transform_wellbeing_power_form(consumption=100, strength_of_diminishing=0.75)
+    # direct from power form model: ( 1 / (1-0.75) ) * 100**(1-0.75)
+    expected = 4 * 3.1623
 
     assert np.isclose(expected, result, atol=0.001)
 
