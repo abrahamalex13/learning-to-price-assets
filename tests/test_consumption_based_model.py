@@ -79,3 +79,27 @@ def test_transform_lifetime_wellbeing():
     result = transform_lifetime_wellbeing(wellbeing_func, consumption_today, consumption_tomorrow, beta)
 
     assert np.isclose(expected, result, atol=0.001)
+
+def test_plot_points():
+    """
+    When plotting 3D Surface colors, and labeling in the tooltip -- discovered plotly library bug,
+    which swaps plotted axes versus the request via api (https://github.com/plotly/plotly.js/issues/5003).
+    Therefore, it's critical to test plotted coordinate versus formula results.
+    """
+
+    # visible when interacting with plot
+    consumption_today_plot = 111
+    consumption_tomorrow_plot = 646
+    lifetime_wellbeing_plot = 69.5
+
+    beta = 1 / 1.05
+    strength_of_diminishing = 0.5
+
+    wellbeing_curve = partial(transform_wellbeing_power_form, strength_of_diminishing=strength_of_diminishing)
+
+    lifetime_wellbeing_formula_result = (
+        wellbeing_curve(consumption=consumption_today_plot) + 
+        beta * wellbeing_curve(consumption=consumption_tomorrow_plot)
+        )
+    
+    assert np.isclose(lifetime_wellbeing_formula_result, lifetime_wellbeing_plot, atol=0.1)
