@@ -11,7 +11,8 @@ notebook
 numpy
 pandas
 pip
-plotly
+# important to pin due to Surface customdata bug and workaround: https://github.com/plotly/plotly.js/issues/5003
+plotly==6.0.0
 plotnine
 pytest
 python-dotenv
